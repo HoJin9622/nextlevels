@@ -1,113 +1,71 @@
-import Image from 'next/image'
+import AppList from '@/components/AppList'
+import React from 'react'
+
+const apps = [
+  {
+    name: '먼스터',
+    description:
+      '적금·예금 특판을 한 눈에, 세상에서 제일 쉬운 돈 돈 모으기!\n먼스터가 꼭 필요한 내용만 알려드릴게요.',
+    googlePlay:
+      'https://play.google.com/store/apps/details?id=com.nextlevel.monster',
+    appStore:
+      'https://apps.apple.com/us/app/%EB%A8%BC%EC%8A%A4%ED%84%B0-%EC%A0%81%EA%B8%88-%EC%A0%95%EB%B3%B4%EB%A5%BC-%ED%95%9C-%EB%88%88%EC%97%90-%EC%A6%90%EA%B2%81%EA%B2%8C-%EB%8F%88-%EB%AA%A8%EC%9C%BC%EA%B8%B0/id1580728197',
+    thumbnail: '/monster.png',
+  },
+  {
+    name: 'QR코드',
+    description: '간단 QR코드 스캐너는 무료 QR코드 스캔 앱입니다.',
+    googlePlay:
+      'https://play.google.com/store/apps/details?id=com.nextlevel.simpleqr',
+    appStore:
+      'https://apps.apple.com/us/app/qr%EC%BD%94%EB%93%9C-%EA%B0%84%EB%8B%A8-qr%EC%BD%94%EB%93%9C-%EC%8A%A4%EC%BA%90%EB%84%88/id1605619998',
+    thumbnail: '/qrcode.png',
+  },
+  {
+    name: '러브유',
+    description: '사랑하는 사람의 특별한 하루하루를 놓치지마세요',
+    googlePlay:
+      'https://play.google.com/store/apps/details?id=net.nextlevels.loveyou',
+    appStore:
+      'https://apps.apple.com/us/app/%EB%9F%AC%EB%B8%8C%EC%9C%A0-%EC%82%AC%EB%9E%91%ED%95%98%EB%8A%94-%EC%82%AC%EB%9E%8C%EC%9D%98-%ED%8A%B9%EB%B3%84%ED%95%9C-%ED%95%98%EB%A3%A8%ED%95%98%EB%A3%A8%EB%A5%BC-%EB%86%93%EC%B9%98%EC%A7%80%EB%A7%88%EC%84%B8%EC%9A%94/id1619522329',
+    thumbnail: '/loveyou.png',
+  },
+  {
+    name: 'LH집마련',
+    description: '귀찮았던 LH 청약센터 공고문 확인!\nLH집마련이 해결해드려요~',
+    googlePlay:
+      'https://play.google.com/store/apps/details?id=net.nextlevels.lhhouse',
+    appStore:
+      'https://apps.apple.com/us/app/lh%EC%A7%91%EB%A7%88%EB%A0%A8-%EB%B6%84%EC%96%91-%EC%9E%84%EB%8C%80-%EA%B3%B5%EA%B3%A0%EB%AC%B8%EC%9D%84-%ED%95%9C%EB%88%88%EC%97%90/id6444668977',
+    thumbnail: '/lhhouse.png',
+  },
+  {
+    name: 'GiftList',
+    description:
+      '여러분이 가진 모든 소중한 선물을 기록하세요!\n누가 어떤 선물을 받았는지, 어떤 선물을 받았는지 확인하세요.\n물론, 여러분은 또한 그 대가로 무엇을 했는지 기록할 수 있습니다!',
+    googlePlay:
+      'https://play.google.com/store/apps/details?id=net.nextlevels.giftlist',
+    appStore:
+      'https://apps.apple.com/us/app/giftlist-easy-record-gifts/id1659901477',
+    thumbnail: '/giftlist.png',
+  },
+  {
+    name: 'SimpleToDo',
+    description:
+      ' Stay organized and on top of your tasks with our easy-to-use TO DO list app!',
+    googlePlay:
+      'https://play.google.com/store/apps/details?id=net.nextlevels.simpletodo',
+    appStore:
+      'https://apps.apple.com/us/app/simpletodo-create-easy-todo/id1667845766',
+    thumbnail: '/simpletodo.png',
+  },
+]
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+    <main className='max-w-7xl mx-auto pt-5 px-5'>
+      <h1 className='font-bold text-2xl mb-5'>넥스트레블&apos;s App List</h1>
+      <AppList apps={apps} />
     </main>
   )
 }
