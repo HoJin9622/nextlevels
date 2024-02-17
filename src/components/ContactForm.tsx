@@ -24,7 +24,7 @@ export default function ContactForm() {
   const [form, onSubmit] = useContactForm()
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
+      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6 py-4'>
         <FormField
           control={form.control}
           name='application'
