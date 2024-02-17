@@ -37,10 +37,10 @@ export default function Application({
       </CardContent>
       <CardFooter className='space-x-2'>
         <a href={links.appstore} target='_blank' rel='noopener noreferrer'>
-          <Button>App Store</Button>
+          <Button size='sm'>App Store</Button>
         </a>
         <a href={links.playstore} target='_blank' rel='noopener noreferrer'>
-          <Button>Play Store</Button>
+          <Button size='sm'>Play Store</Button>
         </a>
       </CardFooter>
     </Card>
