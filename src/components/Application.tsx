@@ -14,12 +14,17 @@ type ApplicationProps = {
   title: string
   description: string
   thumbnail: StaticImport
+  links: {
+    playstore: string
+    appstore: string
+  }
 }
 
 export default function Application({
   title,
   description,
   thumbnail,
+  links,
 }: ApplicationProps) {
   return (
     <Card>
@@ -31,8 +36,12 @@ export default function Application({
         <Image src={thumbnail} alt='' />
       </CardContent>
       <CardFooter className='space-x-2'>
-        <Button>App Store</Button>
-        <Button>Play Store</Button>
+        <a href={links.appstore} target='_blank' rel='noopener noreferrer'>
+          <Button>App Store</Button>
+        </a>
+        <a href={links.playstore} target='_blank' rel='noopener noreferrer'>
+          <Button>Play Store</Button>
+        </a>
       </CardFooter>
     </Card>
   )
