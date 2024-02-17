@@ -77,16 +77,19 @@ const applications = [
 
 export default function ApplicationList() {
   return (
-    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 py-3'>
-      {applications.map((application) => (
-        <Application
-          key={application.title}
-          title={application.title}
-          description={application.description}
-          thumbnail={application.thumbnail}
-          links={application.links}
-        />
-      ))}
-    </div>
+    <section className='py-4 px-5'>
+      <h2 className='font-medium text-lg'>Our Apps</h2>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 py-3'>
+        {applications.map((application) => (
+          <Application
+            key={application.title}
+            title={application.title}
+            description={application.description}
+            thumbnail={application.thumbnail}
+            links={application.links}
+          />
+        ))}
+      </div>
+    </section>
   )
 }
