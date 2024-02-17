@@ -11,19 +11,41 @@ import {
   FormMessage,
 } from './ui/form'
 import { Button } from './ui/button'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from './ui/select'
+import { Textarea } from './ui/textarea'
 
 export default function ContactForm() {
   const [form, onSubmit] = useContactForm()
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
         <FormField
           control={form.control}
           name='application'
-          render={() => (
+          render={({ field }) => (
             <FormItem>
               <FormLabel>Application</FormLabel>
-              <FormControl></FormControl>
+              <FormControl>
+                <Select {...field}>
+                  <SelectTrigger>
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value='먼스터'>먼스터</SelectItem>
+                    <SelectItem value='QR코드'>QR코드</SelectItem>
+                    <SelectItem value='러브유'>러브유</SelectItem>
+                    <SelectItem value='LH집마련'>LH집마련</SelectItem>
+                    <SelectItem value='GiftList'>GiftList</SelectItem>
+                    <SelectItem value='tv맛집'>tv맛집</SelectItem>
+                  </SelectContent>
+                </Select>
+              </FormControl>
               <FormDescription>Applications to contact</FormDescription>
               <FormMessage />
             </FormItem>
@@ -32,10 +54,16 @@ export default function ContactForm() {
         <FormField
           control={form.control}
           name='body'
-          render={() => (
+          render={({ field }) => (
             <FormItem>
               <FormLabel>Message</FormLabel>
-              <FormControl></FormControl>
+              <FormControl>
+                <Textarea
+                  placeholder='Please fill out your inquiry'
+                  className='resize-none'
+                  {...field}
+                />
+              </FormControl>
               <FormMessage />
             </FormItem>
           )}

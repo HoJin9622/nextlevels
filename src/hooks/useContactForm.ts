@@ -9,7 +9,11 @@ const formSchema = z.object({
 })
 
 export default function useContactForm() {
-  const form = useForm<z.infer<typeof formSchema>>()
+  const form = useForm<z.infer<typeof formSchema>>({
+    defaultValues: {
+      application: '먼스터',
+    },
+  })
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     console.log(values)
   }
