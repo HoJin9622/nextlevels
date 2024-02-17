@@ -32,7 +32,10 @@ export default function ContactForm() {
             <FormItem>
               <FormLabel>Application</FormLabel>
               <FormControl>
-                <Select {...field}>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
                   <SelectTrigger>
                     <SelectValue />
                   </SelectTrigger>
