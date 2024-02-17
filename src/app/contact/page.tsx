@@ -1,4 +1,6 @@
-import ContactForm from '@/components/ContactForm'
+import ContactForm, { ContactFormSkeleton } from '@/components/ContactForm'
+
+import { Suspense } from 'react'
 
 export default function Contact() {
   return (
@@ -8,7 +10,9 @@ export default function Contact() {
         If you have any questions for us, please contact us through the form
         below.
       </p>
-      <ContactForm />
+      <Suspense fallback={<ContactFormSkeleton />}>
+        <ContactForm />
+      </Suspense>
     </main>
   )
 }

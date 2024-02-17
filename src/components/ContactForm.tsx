@@ -19,6 +19,7 @@ import {
   SelectValue,
 } from './ui/select'
 import { Textarea } from './ui/textarea'
+import { Skeleton } from './ui/skeleton'
 
 export default function ContactForm() {
   const [form, onSubmit] = useContactForm()
@@ -74,5 +75,17 @@ export default function ContactForm() {
         <Button type='submit'>Submit</Button>
       </form>
     </Form>
+  )
+}
+
+export function ContactFormSkeleton() {
+  return (
+    <div className='space-y-6 py-4'>
+      <Skeleton className='w-16 h-4' />
+      <Skeleton className='w-full h-10 mt-2' />
+      <Skeleton className='w-16 h-4' />
+      <Skeleton className='w-full h-20 mt-2' />
+      <Skeleton className='w-20 h-10 mt-6' />
+    </div>
   )
 }
